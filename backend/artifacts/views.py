@@ -399,3 +399,4 @@ def get_museum_info(request, museum_name):
     data['introduction'] = pretty_data.find('fcltyintrcn').text
 
     return Response(data)
+
