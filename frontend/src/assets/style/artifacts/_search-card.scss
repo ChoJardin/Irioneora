@@ -1,28 +1,31 @@
 .search-card {
- border: 1px solid #ffffff;
+ border: 1px solid #d4ab67;
  margin-top: 10%;
 }
-      
-.search-card-img {
 
+.search-card-img {
+  display: flex;
+  justify-content: center;
 }
 
 .search-card-img img {
-  height: 104px;
-  width: 104px;
+  height: 3.5rem;
+  width: 100%;
 }
 
 .search-card-p {
-  border-top: 1px solid #32383B;
   background-color: #32383B;
   color: #d4ab67;
-  font-size: small;
-  text-align: center;
+  font-size: 0.5rem;
 }
 
 .search-card-p p {
   margin: 0px;
-  width: 104px;
+  height: 3rem;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 

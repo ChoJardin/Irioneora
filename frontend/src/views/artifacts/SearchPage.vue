@@ -23,5 +23,6 @@ import Button from "@/components/common/Button";
 </script>
 
 <style lang="scss" scoped>
+    @import "src/assets/style/artifacts/_search-page.scss";
 
 </style>e

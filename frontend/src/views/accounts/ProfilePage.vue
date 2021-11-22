@@ -6,6 +6,8 @@
       {{nickname}}
     </div>
 
+    <button @click="onLogout">로그아웃</button>
+
     <div class="router-wrap">
       <router-link to="/profile" class="router-button">
         <Button value="좋아하는 문화재" class="button"></Button>
@@ -19,10 +21,11 @@
 </template>
 
 <script>
-import accountsApi from "@/api/accounts";
+import cookies from "vue-cookies";
+import {mapState} from "vuex";
+import AccountsApi from "@/api/accounts";
 import Button from "@/components/common/Button";
 import ImageBox from "@/components/accounts/ImageBox";
-import {mapState} from "vuex";
 
 export default {
   name: "ProfilePage",
@@ -33,6 +36,12 @@ export default {
   // props
   // data
   // methods
+  methods: {
+    onLogout() {
+      this.$store.dispatch('logout')
+      this.$router.push('/')
+    }
+  },
   // computed
   computed: {
     ...mapState({
@@ -41,13 +50,21 @@ export default {
   },
   // watch
   // life cycle hook
-  created() {
-    accountsApi.requestProfile()
-      .then(res =>
-        this.$store.dispatch('setProfileInfo', res.data)
-      )
-  }
   // navigation guard
+  beforeRouteEnter(to, from, next) {
+    const token = cookies.get('user-token')
+    // 토큰이 있다면
+    if (token) {
+      next(vm => {
+        AccountsApi.requestProfile(token)
+          .then(res => {
+            console.log(res.data)
+            vm.$store.dispatch('setProfileInfo', res.data)
+          })
+      })
+    }
+    else next('/login')
+  }
 }
 </script>
 

@@ -1,4 +1,99 @@
-.detail {
+.artifact-content {
+  color: #E5E5E5;
+  font-size: 13px;
+  font-weight: 200;
+  margin-left: 5px;
+}
+
+.artifact-image {
+  width: 100%;
+  margin-top: 20px;
+}
+
+.artifact-name {
+  border-left: 15px solid #D4AB67;
+  color: #D4AB67;
+  font-size: 25px;
+  font-weight: 600;
+  padding-left: 7px;
+}
+
+.artifact-title {
+  color: #D4AB67;
+  font-size: 16px;
+  font-weight: 400;
+  margin: 0px 0px 0px 5px;
+}
+
+.detail-bgimg {
+  position: absolute;
+  right: 0;
+}
+
+.detail-page {
   max-width: 425px;
   width: 100%;
+}
+
+.description {
+  color: #E5E5E5;
+  font-size: 12.5px;
+  font-weight: 200;
+  margin: 3px 3px 0px 7px;
+}
+
+.first-tab {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 15px;
+}
+
+.heart {
+  width: 20px;
+  margin-right: 15px;
+}
+
+.second-tab {
+  display: flex;
+  align-items: center;
+}
+
+.tab {
+  align-items: center;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.museum-button {
+  align-items: center;
+  display: flex;
+  background-color: #d4aa6731;
+  border: transparent;
+  border-radius: 0%;
+  justify-content: center;
+  height: 15px;
+  margin: 2.5px 0px 0px 10px;
+  width: 50px;
+}
+
+.museum-button-text {
+  color: white;
+  font-family: 'Noto Serif KR', serif;
+  font-size: 8px;
+  font-weight: 200;
+}
+
+.wordcloud {
+  border-right: 15px solid #D4AB67;
+  color: #D4AB67;
+  display: flex;
+  font-size: 17px;
+  font-weight: 500;
+  justify-content: flex-end;
+  padding-right: 7px;
+}
+
+#wordcloud {
+  height: 200px;
+  margin: 0;
 }

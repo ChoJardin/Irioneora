@@ -2,7 +2,7 @@
   <div>
     <div class="img-wrap">
       <img v-if="profileImg" :src="profileImg" alt="profile image">
-      <img v-else src="@/assets/images/logo-main.png" alt="profile image">
+      <img v-else src="@/assets/images/profile-background.png" alt="profile image">
     </div>
   </div>
 </template>

@@ -1,0 +1,65 @@
+.button {
+  width: 90%;
+  margin-left: 5%;
+  margin-top: 20px;
+  height: 50px;
+  background-color: #081420;
+  color: rgba(222, 200, 164, 1);
+  border: 1px solid rgba(222, 200, 164, 1);
+  font-size: 1em;
+  cursor: pointer;
+}
+.button:disabled {
+  opacity: 0.6;
+  cursor: default;
+}
+
+.input-with-button {
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+}
+
+.input-with-button a {
+  width: 21%;
+  margin-bottom: 25px;
+  /*margin-left: 3%;*/
+  align-self: center;
+  color: #cd4e3e;
+  font-size: 0.8em;
+  cursor: pointer;
+  border: 1px solid #cd4e3e;
+  padding: 5px 3px;
+  border-radius: 5px;
+  box-shadow: 0 0 15px -8px rgba(0, 0, 0, 0.55);
+  text-decoration: none;
+  text-align: center;
+  position: absolute;
+  right: 20px;
+  z-index: 3;
+}
+
+.input-with-button a.disabled {
+  /*color: lightgray;*/
+  opacity: 0.5;
+  /*text-decoration: none;*/
+  pointer-events: none;
+  cursor: default;
+}
+
+.input-with-button a.success {
+  color: #DEC8A4;
+  pointer-events: none;
+  cursor: default;
+  border: none;
+  box-shadow: none;
+}
+
+#signup{
+  margin-top: 40px;
+}
+
+.user-input {
+  width: 90%;
+  margin-left: 5%;
+}

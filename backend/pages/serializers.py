@@ -1,8 +1,8 @@
 from rest_framework import serializers
-from .models import Artifact
+from .models import RecommendedArtifact
 
-class MainArtifactSerializer(serializers.ModelSerializer):
+class RecommendedArtifactSerialize(serializers.ModelSerializer):
     class Meta:
-        model = Artifact
+        model = RecommendedArtifact
         fields = '__all__'
         # exclude = ('user',)

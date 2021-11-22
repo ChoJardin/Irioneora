@@ -4,11 +4,15 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
-    <link rel="icon" href="<%= BASE_URL %>favicon.ico">
+    <link rel="icon" href="<%= BASE_URL %>logo-navbar.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@200;300;400;600&display=swap" rel="stylesheet">
-    <title><%= htmlWebpackPlugin.options.title %></title>
+    <!-- google material -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" >
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" >
+    <title>이리오너라</title>
     <style>
       /* http://meyerweb.com/eric/tools/css/reset/
        v2.0 | 20110126
@@ -61,11 +65,23 @@
 
 
       body {
-        padding-top: 15px;
         background-color: #081420;
       }
     </style>
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+     <script 
+      src="https://developers.kakao.com/sdk/js/kakao.js"
+      >
+    
+    </script>
+
+
+    <script>
+        // SDK를 초기화 합니다. 사용할 앱의 JavaScript 키를 설정해 주세요.
+        Kakao.init("8bd6ab6a4d0cb834aa13444fe66323b1");
+
+        // SDK 초기화 여부를 판단합니다.
+        console.log(Kakao.isInitialized());
+    </script>
   </head>
   <body>
     <noscript>

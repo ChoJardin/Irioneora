@@ -6,6 +6,8 @@ from django.conf import settings
 class Artifact(models.Model):
     identification_number = models.CharField(max_length=100)
     image_uri = models.TextField()
+    artifact_name = models.TextField(null=True, blank=True)
+
 
 class ArtifactDetail(models.Model):
     identification_number = models.CharField(max_length=100)

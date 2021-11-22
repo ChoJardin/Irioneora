@@ -1,0 +1,17 @@
+button {
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Noto Serif KR', serif;
+  font-size: 14px;
+  //font-weight: 600;
+  color: #DEC8A4;
+  width: 100%;
+  border: 1px solid rgba(222, 200, 164, 0.5);
+  background-color: transparent;
+
+  .icon {
+    width: 11px;
+  }
+}

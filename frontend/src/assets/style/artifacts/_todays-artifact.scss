@@ -29,25 +29,24 @@
       color: #DEC8A4;
       font-size: 24px;
       font-weight: 700;
-      line-height: 25px;
-      align-self: flex-start;
+      line-height: 30px;
+      word-break: keep-all;
+      text-align: start;
     }
 
   }
 
   .image-wrap {
     width: 100%;
-    padding-top: 100%;
     position: relative;
   }
   img {
-    position: absolute;
-    top: 0;
-    left: 0;
-    bottom: 0;
-    right: 0;
+    //position: absolute;
+    //top: 0;
+    //left: 0;
+    //bottom: 0;
+    //right: 0;
     width: 100%;
-    height: 100%;
     object-fit: cover;
     object-position: center;
   }

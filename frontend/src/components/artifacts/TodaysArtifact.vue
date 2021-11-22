@@ -57,28 +57,36 @@ export default {
 
     ArtifactsApi.requestToday()
       .then(res => {
-        const recommend = JSON.parse(res.data)
-        // console.log(recommend)
-        // console.log(recommend.result.list.data.item)
-        const artifactInfos = recommend.result.list.data.item
-        artifactInfos.forEach(info => {
-          // console.log(info)
-          if (info['@key'] === 'id') {
-            this.idNumber = info['@value']
-          } else if (info['@key'] === 'imgUri') {
-            this.imgUri = info['@value']
-          } else if (info['@key'] === 'museumName2') {
-            this.museum = info['@value']
-          } else if (info['@key'] === 'nameKr') {
-            this.name = info['@value']
-          } else if (info['@key'] === 'nationalityName2') {
-            this.epoque = info['@value']
-          } else if (info['@key'] === 'nationalityName1') {
-            this.nationailty = info['@value']
-          } else if (info['@key'] === 'desc') {
-            this.description = info['@value']
-          }
-        })
+        console.log(res)
+        console.log(res.data.nationality_name)
+        this.idNumber = res.data.id_num
+        this.imgUri = res.data.image_uri
+        this.museum = res.data.museum_name
+        this.name = res.data.name
+        this.epoque = res.data.nationality_name
+        this.description = res.data.desc
+        // const recommend = JSON.parse(res.data)
+        // // console.log(recommend)
+        // // console.log(recommend.result.list.data.item)
+        // const artifactInfos = recommend.result.list.data.item
+        // artifactInfos.forEach(info => {
+        //   // console.log(info)
+        //   if (info['@key'] === 'id') {
+        //     this.idNumber = info['@value']
+        //   } else if (info['@key'] === 'imgUri') {
+        //     this.imgUri = info['@value']
+        //   } else if (info['@key'] === 'museumName2') {
+        //     this.museum = info['@value']
+        //   } else if (info['@key'] === 'nameKr') {
+        //     this.name = info['@value']
+        //   } else if (info['@key'] === 'nationalityName2') {
+        //     this.epoque = info['@value']
+        //   } else if (info['@key'] === 'nationalityName1') {
+        //     this.nationailty = info['@value']
+        //   } else if (info['@key'] === 'desc') {
+        //     this.description = info['@value']
+        //   }
+        // })
       })
       .catch(err => console.log(err))
   }

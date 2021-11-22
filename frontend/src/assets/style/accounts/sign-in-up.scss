@@ -1,0 +1,18 @@
+.router {
+  width: calc(100% / 2);
+  text-align: center;
+  color: #DEC8A4;
+  text-decoration: none;
+  font-size: 14px;
+  line-height: 50px;
+}
+
+.router-wrap {
+  width: calc(100% - 40px);
+  margin-left: 20px;
+  display: flex;
+
+  & a.router-link-exact-active{
+    border-bottom: 1px solid #DEC8A4;
+  }
+}

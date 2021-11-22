@@ -1,6 +1,7 @@
 <template>
   <div class="main">
     <img src="@/assets/images/mainpage.png" alt="main page image" class="background">
+    <img src="@/assets/images/mainpage-flower.png" alt="" class="flower">
     <div class="description">
       <div class="description-kr">
         이리오너라에서<br>
@@ -15,8 +16,12 @@
 
     <!-- 이미지 입력/ 안내 -->
     <div class="image-upload">
-      <Button value="나와 닮은 문화재 찾기 →" class="button" @click.native="onImage"></Button>
-      <ImageInput class="image-input" ref="image" @on-loading="onLoading"></ImageInput>
+      <Button id="flux" value="나와 닮은 문화재 찾기 →" class="button" @click.native="onImage"></Button>
+      
+      <ImageInput
+          class="image-input" ref="image"
+          @on-loading="onLoading">
+      </ImageInput>
       <div class="info">
         사진은 저장되지 않습니다.<br>
         얼굴이 흐릿하게 나오거나, 판별하기 어려운 사진은 결과가 도출되지 않을 수 있습니다.

@@ -1,0 +1,104 @@
+
+#login {
+  margin-top: 40px;
+  display: flex;
+  flex-direction: column;
+  /*position: absolute;*/
+  /*width: 90%;*/
+  /*top: 60px;*/
+}
+
+#login .back-button {
+  /*position: absolute;*/
+  /*top: 10px;*/
+  display: flex;
+  margin-top: 10px;
+}
+
+#login #title {
+  color: #183a1d;
+  margin: 30px 0 40px;
+  padding: 10px 0;
+  font-size: 1.4em;
+}
+
+.user-input {
+  width: 90%;
+  margin-left: 5%;
+}
+
+.error-message {
+  color: #cd4e3e;
+  margin-bottom: 20px;
+  font-size: 0.8em;
+  font-weight: bold;
+  width: 90%;
+  align-self: center;
+  word-break: keep-all;
+}
+
+.button {
+  width: 90%;
+  margin-left: 5%;
+  margin-top: 20px;
+  height: 50px;
+  background-color: #081420;
+  color: rgba(222, 200, 164, 1);
+  border: 1px solid rgba(222, 200, 164, 1);
+  /*box-shadow: 0 0 15px -8px rgba(0, 0, 0, 0.55);*/
+  font-size: 1em;
+  cursor: pointer;
+}
+.button:disabled {
+  opacity: 0.6;
+  cursor: default;
+}
+
+/* 소셜로그인, 회원가입 */
+.login-description{
+  width: 90%;
+  margin-left: 5%;
+  font-family: "Noto Serif KR";
+  font-size: 0.9em;
+  color: #183a1d;
+}
+
+hr {
+  display: inline-block;
+  width: calc((100% - 200px) / 2)
+}
+
+#login-social {
+  display: flex;
+  align-items: center;
+  justify-items: start;
+  justify-content: space-between;
+  margin-top: 40px;
+}
+
+.kakao-login {
+  height: 40px;
+}
+
+.kakao-login-long {
+  height: 50px;
+  margin: auto;
+  /*margin-left: 5%;*/
+  margin-top: 30px;
+  width: 90%;
+}
+
+
+#login-to-signup .login-description{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 80px;
+  margin-bottom: 30px;
+}
+
+
+#to-signup-button {
+  width: 90%;
+  margin: auto;
+}
