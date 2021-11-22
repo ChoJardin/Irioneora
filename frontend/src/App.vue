@@ -2,9 +2,22 @@
   <div id="app">
     <NavBar id="app-nav"/>
 
-    <div id="app-content">
-      <router-view/>
-    </div>
+      
+      <div id="app-content">
+        
+        <transition
+          mode="out-in"
+          name="router-anim"
+          :enter-active-class="this.$route.meta.enterActiveClass"
+          :leave-active-class="this.$route.meta.leaveActiveClass"
+        > 
+          
+          <router-view/>
+
+        </transition>
+      
+      </div>
+    
 
     <LowBar id="low-bar"></LowBar>
   </div>
@@ -47,7 +60,7 @@ export default {
   margin: 0 auto;
 
   /* 임시로 구분선 하나 그을게요.. */
-  border: 1px solid ivory;
+  /*border: 1px solid ivory;*/
 
   font-family: 'Noto Serif KR', serif;
 

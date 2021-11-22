@@ -87,10 +87,10 @@ export default {
 
     // 중복확인
     checkUsername() {
-      console.log('clicked')
+      // console.log('clicked')
       // GET /user/nickname?nickname="kimssafy"
       let params = {username: this.username}
-      console.log(params)
+      // console.log(params)
       AccountsApi.requestUsernameCheck(params)
         .then(res => {
           // 중복된 아이디

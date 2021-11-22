@@ -3,19 +3,18 @@
   font-size: 25px;
   line-height: 25px;
   margin-bottom: 10px;
+  margin-left: 20px;
 }
 
 .search-button {
   font-size: 12px;
   border: solid 1px #848063;
   color: #848063;
-  display: inline-block;
-  margin: 5px;
+
   width: 20%;
   text-align: center;
   margin-top: 10px;
   margin-bottom: 10px;
-  margin-right: 10px;
   line-height: 28px;
   height: 28px;
   border-radius: 3px;
@@ -29,6 +28,14 @@
 #float-clear-div {
   margin-top: 15px;
   clear: both;
+}
+
+.search-filter-group {
+  display: flex;
+  flex-wrap: wrap;
+  width: calc(100% - 40px);
+  margin-left: 20px;
+  justify-content: space-between;
 }
 
 .search-filter-wrap-div{

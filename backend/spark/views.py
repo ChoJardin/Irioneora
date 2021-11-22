@@ -1,13 +1,12 @@
-from django.http import HttpResponse
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import get_object_or_404
 
 from artifacts.models import Artifact
-from artifacts.serializers import ArtifactResembleSerializer
+# from artifacts.serializers import ArtifactResembleSerializer
 
 
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
-from rest_framework.permissions import IsAuthenticated
+# from rest_framework.permissions import IsAuthenticated
 
 
 import numpy as np
@@ -22,7 +21,6 @@ from pyspark.ml.feature import PCA
 from pyspark.ml.feature import PCAModel
 
 from scipy.spatial import distance
-
 
 
 # 인풋된 유저 얼굴 데이터 변환

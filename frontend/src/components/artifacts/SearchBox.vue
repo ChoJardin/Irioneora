@@ -1,15 +1,10 @@
 <template>
   <div>
-    <div class="search-icon-box">
 
     <input type="text" class="search-box" :placeholder="placeholder" v-model="indexWord" @keydown.enter="searchKeyWord()"/>
-    
-    <!-- <button class="search-icon-box-real" @click="searchKeyWord()">
-      search
-    </button> -->
-    <!-- <button @click="searchKeyWord()">search</button> -->
-    </div>
+
     <hr>
+
     <div class="search-wrap-div">
       <SearchCard 
         v-for="(item,idx) of items" 

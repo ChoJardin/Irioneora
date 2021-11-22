@@ -4,9 +4,9 @@
 
     <div class="nickname">
       {{nickname}}
+      <span @click="onLogout" class="logout">로그아웃</span>
     </div>
 
-    <button @click="onLogout">로그아웃</button>
 
     <div class="router-wrap">
       <router-link to="/profile" class="router-button">
@@ -39,7 +39,9 @@ export default {
   methods: {
     onLogout() {
       this.$store.dispatch('logout')
-      this.$router.push('/')
+      .then(res =>
+        this.$router.push('/')
+      )
     }
   },
   // computed
@@ -58,7 +60,7 @@ export default {
       next(vm => {
         AccountsApi.requestProfile(token)
           .then(res => {
-            console.log(res.data)
+            // console.log(res.data)
             vm.$store.dispatch('setProfileInfo', res.data)
           })
       })

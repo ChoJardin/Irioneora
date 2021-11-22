@@ -1,4 +1,6 @@
 import axios from 'axios'
+import store from '@/store'
+import cookies from "vue-cookies";
 
 // const URL = 'http://localhost:8000/'
 const URL = 'http://j5a601.p.ssafy.io:8000/'
@@ -32,14 +34,21 @@ async function requestKakaoLogin(code) {
   const data = {
     'code': code
   }
-  console.log('request')
+  // console.log('request')
   return await axios.post(kakaoPath, data)
 }
 
 // 얼굴 데이터 백 전송
 async function requestAnalyze(data) {
   const analyzePath = URL + ROUTES.userFace
-  return await axios.post(analyzePath, data)
+  if (store.getters.isLoggedIn) {
+      const headers = {
+        'Authorization': `Token ${cookies.get('user-token')}`
+      }
+    return await axios.post(analyzePath, data, {headers: headers})
+  } else {
+    return await axios.post(analyzePath, data)
+  }
 }
 
 // 아이디 중복확인

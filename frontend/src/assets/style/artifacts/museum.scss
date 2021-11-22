@@ -1,8 +1,34 @@
+.semi-title {
+  color: #DEC8A4;
+  font-size: 14.5px;
+  margin-bottom: 3px;
+}
+
+.inblock-box {
+  display: inline-block;
+  width: 50px;
+}
+
+.museum-name {
+  color: #D4AB67;
+  font-size: 25px;
+  font-weight: 500;
+  padding-top: 30px;
+}
+
 .museum-modal {
   background-color: #081420;
   color: #E5E5E5;
   font-family: 'Noto Serif KR', serif;
+  font-size: 12.5px;
   font-weight: 200;
-  width: 100%;
   height: 100%;
+  padding: 25px;
+  width: 100%;
+}
+
+.kakao-map {
+  margin-top: 20px;
+  height: 150px; 
+  width: 250px;
 }

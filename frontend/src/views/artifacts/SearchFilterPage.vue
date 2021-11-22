@@ -5,10 +5,13 @@
     <SearchFilter @change="getPurpose" id="search-filter" theme="유물 종류" :sortlist="purposeName2" :startnum = "8"  />
     <div id="float-clear-div">
       <div class="search-button-div">
-        <button class="search-button" @click="searchFilters()" value="search">search</button>
+        <button class="search-button" @click="searchFilters" value="search">search</button>
       </div>
       <hr>
     </div>
+    <ErrorModal v-if="isError" :error="error" @close="isError=false"></ErrorModal>
+
+
     <div class="search-wrap-div">
       <SearchCard 
         v-for="(item,idx) of items" 
@@ -24,12 +27,14 @@
 import SearchFilter from "@/components/artifacts/SearchFilter.vue";
 import axios from 'axios'
 import SearchCard from '@/components/artifacts/SearchCard.vue'
+import ErrorModal from "@/components/artifacts/ErrorModal";
 
   export default {
     name: 'SearchFilterPage',
     components : {
       SearchFilter,
-      SearchCard
+      SearchCard,
+      ErrorModal,
     },
     data () {
       return {
@@ -70,7 +75,9 @@ import SearchCard from '@/components/artifacts/SearchCard.vue'
         reminderFlag: 0,
         nextNumReminder: 0,
         nextNum: 0,
-        items: []
+        items: [],
+        isError: false,
+        error: '검색 필터를 설정해주세요'
       }
     },
     
@@ -98,7 +105,7 @@ import SearchCard from '@/components/artifacts/SearchCard.vue'
         // 필터제한
         if (this.nationalityCode === '' && this.purposeCode === '')  {
           // 어떻게 표현하지
-          console.log("empty")
+          this.isError = true
           return false
         } 
 
@@ -133,17 +140,17 @@ import SearchCard from '@/components/artifacts/SearchCard.vue'
       // infinite methods
       loadMore () {
         if (this.nextNum > this.totalNum) {
-          // console.log("over")
+
           return false
         }
         // this.loading = true;
         setTimeout(_ => {
-          // console.log(e)
+
           for (var i = 0; i < 6; i++) {
             this.nextNum++
             this.items.push(this.search_list[this.nextNum]);
             if (this.nextNum > this.totalNum) {
-              // console.log("over")
+
               return false
             }
           }
@@ -170,7 +177,7 @@ import SearchCard from '@/components/artifacts/SearchCard.vue'
       // Detect when scrolled to bottom.
       const listElm = document.querySelector('.search-wrap-div');
       listElm.addEventListener('scroll',_ => {
-        // console.log(e)
+
         if(listElm.scrollTop + listElm.clientHeight >= listElm.scrollHeight-10) {
           this.loadMore();
         }

@@ -4,8 +4,11 @@
     <div id="float-clear-div">
         <p class="theme-text">{{theme}}</p>
         <div class="search-filter-wrap-div">
-          <div class= "search-button" @click="buttonSwitch($event,idx)" v-for="(ele,idx) in sortlist" :key="idx">
-            {{ele.name}}
+          <div class="search-filter-group">
+
+            <div class= "search-button" @click="buttonSwitch($event,idx)" v-for="(ele,idx) in sortlist" :key="idx">
+              {{ele.name}}
+            </div>
           </div>
         </div>
         

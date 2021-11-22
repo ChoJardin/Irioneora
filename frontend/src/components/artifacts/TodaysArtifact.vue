@@ -57,8 +57,8 @@ export default {
 
     ArtifactsApi.requestToday()
       .then(res => {
-        console.log(res)
-        console.log(res.data.nationality_name)
+        // console.log(res)
+        // console.log(res.data.nationality_name)
         this.idNumber = res.data.id_num
         this.imgUri = res.data.image_uri
         this.museum = res.data.museum_name

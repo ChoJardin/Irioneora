@@ -31,7 +31,7 @@ async function requestDetail(id) {
 // 닮은 유물 저장
 async function saveResembleArtifact(artifactId) {
   const saveResemblePath = URL + ROUTES.saveResemble(artifactId)
-  console.log(token)
+  // console.log(token)
   // data 없이 headers 넘기는 법?
   await axios.post(saveResemblePath, token, {headers: token})
 }

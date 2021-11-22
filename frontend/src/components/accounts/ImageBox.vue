@@ -1,8 +1,10 @@
 <template>
   <div>
     <div class="img-wrap">
-      <img v-if="profileImg" :src="profileImg" alt="profile image">
-      <img v-else src="@/assets/images/profile-background.png" alt="profile image">
+      <div class="img-container">
+        <img v-if="profileImg" :src="profileImg" alt="profile image" class="img-profile">
+        <img v-else src="@/assets/images/profile-background.png" alt="profile image" class="img-profile">
+      </div>
     </div>
   </div>
 </template>

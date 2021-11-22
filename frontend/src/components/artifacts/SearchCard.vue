@@ -8,7 +8,7 @@
       </div>
 
       <div class="search-card-p">
-        <p>{{name}}</p>
+        {{name}}
       </div>
 
     </div>

@@ -1,6 +1,6 @@
 <template>
   <div>
-    <button @click="onClick" class="kakao-button">
+    <button @click.prevent="onClick" class="kakao-button">
       <img src="@/assets/images/kakao-icon.png" alt="">
       &nbsp;
       카카오 로그인
@@ -28,6 +28,7 @@ export default {
           if (code) {
             AccountsApi.requestKakaoLogin(code)
             .then(res => {
+              this.$store.dispatch('fulfillLogin', res.data.key)
               cookies.set('user-token', res.data.key)
               this.$router.go(-2)
             })

@@ -24,9 +24,25 @@
 
 
 .nickname {
+  position: relative;
   color: #F1E8DB;
   font-weight: 600;
   font-size: 24px;
   margin: 20px auto;
   text-align: center;
+
+  .logout {
+    position: absolute;
+    right: 20px;
+    background-color: #d4aa6731;
+    border: none;
+    border-radius: 0;
+    height: 20px;
+    //margin: 2.5px 0px 0px 10px;
+    //width: 50px;
+    color: #DEC8A4;
+    font-weight: 200;
+    font-size: 13px;
+    padding: 0 5px;
+  }
 }

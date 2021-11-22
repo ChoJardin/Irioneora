@@ -28,13 +28,13 @@
 .nav-item-center {
   display: flex;
   justify-content: center;
-  width: 33%;
+  width: 100%;
 }
 
 .nav-item-center img {
   align-content: center;
   height: 100%;
-  width: 50px;
+  width: 70px;
 }
 
 .nav-item-end {
@@ -43,10 +43,20 @@
   width: 33%;
 }
 
-#person-icon {
-  margin-right: 5rem;
+// #person-icon {
+//   margin-right: 1rem;
+// }
+
+// #search-icon {
+//   margin-left: 1rem;
+// }
+
+.search-icon {
+  width: 20px;
+  margin-left: 0.8rem;
 }
 
-#search-icon {
-  margin-left: 5rem;
+.profile-icon {
+  width: 20px;
+  margin-right: 0.8rem;
 }

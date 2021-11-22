@@ -13,7 +13,7 @@
           <div class="second-tab">
             <span class="artifact-title">소장위치</span>
             <span class="artifact-content">{{ detailInfo.museum_name }}</span>
-            <button class="museum-button" @click="[openMuseumModal(), setMuseumInfo(detailInfo.museum_name)]"><span class="museum-button-text">자세히 보기</span></button>
+            <button class="museum-button" @click="[openMuseumModal(detailInfo.museum_name), setMuseumInfo(detailInfo.museum_name)]"><span class="museum-button-text">자세히 보기</span></button>
           </div>
         <div v-if="isLoggedIn">
           <div v-if="isLike" class="second-tab">
@@ -72,14 +72,13 @@ import {mapState, mapGetters, mapActions} from "vuex";
 
 export default {
   name: 'DetailPage',
-  components: {},
-  props: {},
+  components: { },
+  props: '',
   data() {
     return {
       detailInfo: [],
       imgUrl: 'https://',
       isLike: '',
-      museumInfo: [],
       wordcloudData: '',
     }
   },
@@ -93,7 +92,6 @@ export default {
         method: 'get',
       })
       .then((res) => {
-        console.log(res.data)
         this.detailInfo = res.data
         this.imgUrl += res.data.image_uri
       })
@@ -122,13 +120,11 @@ export default {
     isLikeArtifact(artifact_id) {
       // some 내장함수로 check
       this.isLike = this.likeArtifacts.some(elem => elem.identification_number === artifact_id)
-      console.log(this.isLike)
-      console.log(this.likeArtifacts)
     },
 
     // 박물관 모달 open
     openMuseumModal() {
-      console.log('모달 open')
+      this.setMuseumInfo(this.detailInfo.museum_name);
       this.$modal.show(
         MuseumModalVue,
         {
@@ -136,8 +132,8 @@ export default {
         },
         {
           name: 'dynamic-modal',
-          width: '400px',
-          height: '400px',
+          width: '300px',
+          height: '500px',
           draggable: false
         }
       )
@@ -164,7 +160,7 @@ export default {
           series: [{
               type: 'wordCloud',
               // circle (default),  cardioid (apple or heart shape curve), diamond, triangle-forward, triangle, alias of triangle-upright, pentagon, and star.
-              shape: 'diamond',
+              shape: 'pentagon',
               // maskImage: maskImage,
               left: 'center',
               top: 'center',
@@ -202,15 +198,18 @@ export default {
   computed: {
     ...mapState({
       accessToken: (state) => state.accounts.authToken,
-      likeArtifacts: (state) => state.accounts.profileInfo.like_artifact
+      likeArtifacts: (state) => state.accounts.profileInfo.like_artifact,
+      museumInfo: state => state.artifacts.museumInfo,
     }),
     ...mapGetters(['isLoggedIn'])
   },
   created() {
-    this.fetchDetailInfo();
     this.getWordCloud();
+    this.fetchDetailInfo();
     this.isLikeArtifact(this.$route.params.artifactId);
-    AccountsAPI.requestProfile(this.accessToken);
+    if (this.isLoggedIn) {
+      AccountsAPI.requestProfile(this.accessToken);
+    }
   },
 }
 
