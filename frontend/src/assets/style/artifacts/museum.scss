@@ -1,3 +1,12 @@
+.closed-date {
+  width: 80%;
+  word-break: keep-all;
+}
+
+.closed-date-wrap {
+  display: flex;
+}
+
 .semi-title {
   color: #DEC8A4;
   font-size: 14.5px;
@@ -6,14 +15,15 @@
 
 .inblock-box {
   display: inline-block;
-  width: 50px;
+  width: 20%;
 }
 
 .museum-name {
   color: #D4AB67;
+  display: inline-block;
   font-size: 25px;
   font-weight: 500;
-  padding-top: 30px;
+  margin-top: 8%;
 }
 
 .museum-modal {
@@ -23,8 +33,13 @@
   font-size: 12.5px;
   font-weight: 200;
   height: 100%;
-  padding: 25px;
+  // padding: 25px;
   width: 100%;
+}
+
+.museum-modal-wrap {
+  background-color: #081420;
+  margin: 0 8% 8% 8%;
 }
 
 .kakao-map {

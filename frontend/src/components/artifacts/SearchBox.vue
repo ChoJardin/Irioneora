@@ -28,8 +28,8 @@ import SearchCard from './SearchCard.vue'
     data: function() {
       return {
         //setting values
-        serviceKey: "DLuSbLjmCJIDKmhoSB7ELx3eVXXxg9ZBqh9oC8/eFWTcq2gDMqfQA7jrooSkvzWgYv/pd9a6fUJKG40K3VQXHg==",
-        placeholder: '검색어를 입력해주세요',
+        serviceKey: 'DLuSbLjmCJIDKmhoSB7ELx3eVXXxg9ZBqh9oC8/eFWTcq2gDMqfQA7jrooSkvzWgYv/pd9a6fUJKG40K3VQXHg==',
+        placeholder: '검색어를 입력해주세요.',
 
         // index case
         indexWord: '', //나중에 네임으로 바꾸자
@@ -78,6 +78,7 @@ import SearchCard from './SearchCard.vue'
           url : `/openapi/relic/list?serviceKey=${this.serviceKey}&name=${this.indexWord}&numOfRows=100&pageNo=1`, 
         })
         .then((res) => {
+          console.log(res)
           if (res.data.totalCount === 0) {
             this.indexWord = ''
             this.placeholder = '결과가 없습니다'

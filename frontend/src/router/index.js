@@ -1,8 +1,6 @@
 import Vue from 'vue'
 import store from '@/store'
 import VueRouter from 'vue-router'
-import cookies from "vue-cookies";
-import Home from '../views/common/Home.vue'
 import MainPage from "@/views/common/MainPage";
 import SearchPage from '../views/artifacts/SearchPage.vue'
 import ProfilePage from "../views/accounts/ProfilePage";
@@ -16,6 +14,7 @@ import ResultPage from "@/views/artifacts/ResultPage";
 import LoginPage from "@/views/accounts/LoginPage";
 import SignupPage from "@/views/accounts/SignupPage";
 import SignInUpPage from "@/views/accounts/SignInUpPage";
+import ErrorPage from "@/views/common/ErrorPage";
 
 
 Vue.use(VueRouter)
@@ -39,15 +38,15 @@ const routes = [
       leaveActiveClass: "animate__animated animate__fadeOut animate__fast"
     },
   },
-  // {
-  //   path: '/intro',
-  //   name: 'IntroPage',
-  //   component: IntroPage,
-  //   meta: {
-  //     enterActiveClass: "animate__animated animate__fadeIn animate__fast",
-  //     leaveActiveClass: "animate__animated animate__fadeOut animate__slow"
-  //   },
-  // },
+  {
+    path: '/error',
+    name: 'ErrorPage',
+    component: ErrorPage,
+    meta: {
+      enterActiveClass: "animate__animated animate__fadeIn animate__fast",
+      leaveActiveClass: "animate__animated animate__fadeOut animate__slow"
+    },
+  },
   {
     path: '/search',
     component: SearchPage,
@@ -137,6 +136,12 @@ const routes = [
       leaveActiveClass: "animate__animated animate__fadeOut"
     },
   },
+  {
+    path: '*',
+    redirect: "/error"
+    // 아래처럼 바로 NotFound 경로를 매칭해도 됨
+    // component: NotFound
+},
 ]
 
 const router = new VueRouter({

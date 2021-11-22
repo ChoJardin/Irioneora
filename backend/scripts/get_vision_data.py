@@ -8,9 +8,9 @@ def get_image_from_url(url):
         res = requests.get(url)
         if res.status_code == 200:
             return res.content
-        print( f'fail to get image. code({res.status_code})')
+        # print( f'fail to get image. code({res.status_code})')
     except:
-        print(url)
+        # print(url)
         print( 'exception raised to get image')
     return None
 
@@ -24,7 +24,7 @@ def get_face_data(image):
         res = requests.post( API_URL, headers=headers, files=files)
         if res.status_code == 200:
             return res.json()
-        print( f'fail to get face data. code({res.status_code})')
+        # print( f'fail to get face data. code({res.status_code})')
     except:
         print( 'exception raised to get face data')
 
@@ -54,7 +54,7 @@ for doc in res['documents']:
     url = doc['image_url']
     image = get_image_from_url(url)
     faces.append( { url:get_face_data(image) } )
-    print(url)
+    # print(url)
 
 
 import json

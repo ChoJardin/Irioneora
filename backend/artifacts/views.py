@@ -13,16 +13,17 @@ from rest_framework.decorators import permission_classes
 from rest_framework.response import Response
 from rest_framework.permissions import IsAuthenticated
 
-from urllib.request import urlopen
-import json
+
 import csv
 import requests
 import bs4
-import xmltodict
-import pprint
+
 
 from konlpy.tag import Okt, Kkma, Twitter
 from collections import Counter
+
+# API_KEY
+API_KEY = 'SrLLfGdZjGbS5OmPmSlewYvcR6tXPmpk11SduYlvFr7r6CA7L9vjF7JRSx7rhrTEvOdAlUDtqkY9HJAg8+Y6ww=='
 
 # 저장 여부 확인
 def is_saved(id):
@@ -40,7 +41,6 @@ def save_to_db(data):
 def get_csv():
     # 소장품 상세정보 불러오기
     URL = 'http://www.emuseum.go.kr/openapi/relic/detail'
-    API_KEY = 'SrLLfGdZjGbS5OmPmSlewYvcR6tXPmpk11SduYlvFr7r6CA7L9vjF7JRSx7rhrTEvOdAlUDtqkY9HJAg8+Y6ww=='
 
     with open('./국립중앙박물관_전국 박물관 유물정보_20190920..csv', encoding='cp949') as f:
         data = csv.reader(f)
@@ -77,7 +77,6 @@ def get_csv():
 def artifact_detail(request, artifact_id):
     
     artifact_url = f'http://www.emuseum.go.kr/openapi/relic/detail'
-    API_KEY = 'SqZskQNLBydKAJrTV5fUn3zRuenH7ELym5KvJWma15ABpxIYBeQK15yeq+cLDfiGBiMv8Pt5VFk1H0Sz4lX3yw=='
     params = {'serviceKey': API_KEY, 'id': artifact_id}
     
     raw_data = requests.get(artifact_url, params=params)
@@ -165,7 +164,6 @@ def artifact_detail(request, artifact_id):
 def wordcloud(request, artifact_id):
     # 해당 유물에 대한 정보 받아오기
     artifact_url = f'http://www.emuseum.go.kr/openapi/relic/detail'
-    API_KEY = 'SqZskQNLBydKAJrTV5fUn3zRuenH7ELym5KvJWma15ABpxIYBeQK15yeq+cLDfiGBiMv8Pt5VFk1H0Sz4lX3yw=='
     params = {'serviceKey': API_KEY, 'id': artifact_id}
 
     raw_data = requests.get(artifact_url, params=params)
@@ -216,7 +214,6 @@ def wordcloud(request, artifact_id):
     # 관련 유물에 대한 정보 받아오기
     if relt_id:
         artifact_url = f'http://www.emuseum.go.kr/openapi/relic/detail'
-        API_KEY = 'SqZskQNLBydKAJrTV5fUn3zRuenH7ELym5KvJWma15ABpxIYBeQK15yeq+cLDfiGBiMv8Pt5VFk1H0Sz4lX3yw=='
         params = {'serviceKey': API_KEY, 'id': relt_id}
 
         raw_data = requests.get(artifact_url, params=params)
@@ -297,7 +294,7 @@ def wordcloud(request, artifact_id):
 @permission_classes([IsAuthenticated])
 def artifact_like(request, artifact_id):
     user = request.user
-    print(user)
+    # print(user)
 
     # 좋아요한 artifact가 DB에 없는 경우 → 저장 후 좋아요하기
     if not Artifact.objects.all().filter(identification_number = artifact_id):
@@ -338,7 +335,7 @@ def artifact_like(request, artifact_id):
     else:
         artifact.like_users.add(user)
 
-    print('-----------------------------', artifact.like_users.all())
+    # print('-----------------------------', artifact.like_users.all())
     serializer = ArtifactLikeSerializer(artifact)
     return Response(serializer.data)
 

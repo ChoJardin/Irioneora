@@ -4,7 +4,8 @@
     <div @click="moveDetail(idNum)" class="search-card">
 
       <div class="search-card-img">
-        <img :src="`${changedUrl}`" alt=""/> 
+        <img v-if="changedUrl.length !== 0" :src="`${changedUrl}`" alt=""/>
+        <img v-else src="@/assets/images/logo-main.png" alt=""/>
       </div>
 
       <div class="search-card-p">

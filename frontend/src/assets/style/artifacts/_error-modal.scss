@@ -20,7 +20,7 @@
 
 .modal-container {
   width: calc(100% - 40px);
-  max-width: 385px;
+  max-width: 300px;
   margin: 0px auto;
   padding: 20px 10px;
   background-color: #081420;
@@ -54,14 +54,18 @@
 }
 
 .modal-default-button {
-  width: 100%;
+  width: 20%;
   height: 30px;
   font-family: "Noto Serif KR";
   background-color: #081420;
-  border: none;
+  border: 1px solid #f1e8db77;
   color: #f1e8db;
   font: 13px;
+}
 
+.modal-footer {
+  display: flex;
+  justify-content: center;
 }
 
 /*

@@ -7,7 +7,8 @@
           {{ detailInfo.artifact_name }}
         </div>
         <div>
-          <img :src="imgUrl" class="artifact-image">
+          <img v-if="imgUrl === 'https://www.emuseum.go.kr/'" src="@/assets/images/logo-main.png" class="artifact-image">
+          <img v-else :src="imgUrl" class="artifact-image">
         </div>
         <div class="first-tab">
           <div class="second-tab">

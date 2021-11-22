@@ -1,0 +1,8 @@
+1,example.com,example.com
+2,http://localhost:8000,localhost
+3,http://127.0.0.1/8000,127.0.0.1
+4,http://j5a601.p.ssafy.io,j5a
+5,https://j5a601.p.ssafy.io,ssl
+6,http://localhost:8000/kakao/login,카카오 로그인
+7,http://127.0.0.1:8000,127.0.0.1
+8,http://localhost:8000/accounts/kakao/user/,http://localhost:8000/accounts/kakao/user/

@@ -10,9 +10,9 @@
    - Sub3 : 2021-09-20 ~ 2021-10-08 
 2. 인원 (총 4인)
    - 이현경 : 팀장
+   - 박나영 : 팀원
    - 윤세일 : 팀원
     - 조정원 : 팀원
-    - 박나영 : 팀원
 
 <br><br>
 
@@ -22,24 +22,48 @@
 - Issue : Jira
 - Communication : Mattermost
 - Design/UI/UX : Adobe Photoshop, Figma
+- <img src="https://img.shields.io/badge/Adobe Photoshop----yellowgreen?logo=adobe photoshop">
+- <img src="https://img.shields.io/badge/Figma----yellowgreen?logo=figma">
 
 <br>
 
 - DB : Mysql
+- <img src="https://img.shields.io/badge/Mysql----yellowgreen?logo=mysql">
 - Cloud : AWS EC2, Ubuntu 20.04.2 LTS, Docker 20.10.7
+- <img src="https://img.shields.io/badge/AWS-EC2-yellowgreen?logo=amazon aws">
+- <img src="https://img.shields.io/badge/Ubuntu-20.04.2 LTS-yellowgreen?logo=ubuntu">
+- <img src="https://img.shields.io/badge/Docker-20.10.7-yellowgreen?logo=docker">
+- <img src="https://img.shields.io/badge/Nginx-1.18.0-yellowgreen?logo=nginx">
 
 **Back-End**
 
   - Python: 3.8.10
+  - <img src="https://img.shields.io/badge/Python-v3.8.10-yellowgreen?logo=python">
   - Django: 3.2.7
+  - <img src="https://img.shields.io/badge/Django-v3.2.7-yellowgreen?logo=django">
   - Visual Studio Code
+
+
+
+**Hadoop**
+
+- **Back-End**
+
+
 
 **Front-End**
 
+<img src="https://img.shields.io/badge/JavaScript-ES6+-yellowgreen?logo=javascript">
+
   - html5, SCSS, JavaScript (ES6)
+  - <img src="https://img.shields.io/badge/HTML----yellowgreen?logo=html5">
+  - <img src="https://img.shields.io/badge/SCSS----yellowgreen?logo=sass">
   - Vue: version 2
+  - <img src="https://img.shields.io/badge/Vue.js-@vue/cli 4.5.13-yellowgreen?logo=vue.js">
   - Node.js : 14.17.3
+  - <img src="https://img.shields.io/badge/Node.js-v.14.17.3-yellowgreen?logo=node.js">
   - Visual Studio Code
+  - <img src="https://img.shields.io/badge/Visual Studio Code----yellowgreen?logo=sass">
 
 <br>
 

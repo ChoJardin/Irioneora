@@ -31,7 +31,7 @@ for i in range(len(uris)):
     identification_number = uris[i][1]
     image_uri = uris[i][2]
 
-    print(i)
+    # print(i)
     # print(identification_number)
     # print(image_uri)
 
@@ -41,7 +41,7 @@ for i in range(len(uris)):
         if len(data["result"]["faces"]) == 0:
             continue
         else:
-            print(f'i have face. idx{i}')
+            # print(f'i have face. idx{i}')
             result.append({identification_number: data})
     except:
         continue
@@ -53,5 +53,5 @@ with open('16000to20000.json', 'w') as f:
     json.dump(result, f)
 
 
-print("Today end!")
-print(len(result))
+# print("Today end!")
+# print(len(result))

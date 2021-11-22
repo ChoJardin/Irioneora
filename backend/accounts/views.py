@@ -6,6 +6,7 @@ import requests
 # 중복확인
 from rest_framework.decorators import api_view
 from django.contrib.auth import get_user_model
+
 User = get_user_model()
 
 # 카카오 로그인
@@ -13,6 +14,7 @@ from rest_auth.registration.views import SocialLoginView
 from allauth.socialaccount.providers.kakao import views as kakao_views
 from allauth.socialaccount.providers.oauth2.client import OAuth2Client
 from allauth.socialaccount.models import SocialAccount
+
 
 
 # 회원가입시 닉네임 중복 확인
@@ -40,12 +42,13 @@ class KakaoAccountsLogin(SocialLoginView):
 @api_view(['GET', 'POST'])
 def kakao_login(request):
 
+
     REST_API_KEY = '0e63d9a73b29cb9e1c85f0279f834367'
     REDIRECT_URI = 'http://j5a601.p.ssafy.io/login'
 
     # 인증 코드
     code = request.data['code']
-    print(code)
+    # print(code)
 
     # 토큰 요청
     get_token = f'https://kauth.kakao.com/oauth/token'
@@ -56,13 +59,13 @@ def kakao_login(request):
         'code': code,
     }
     token_res = requests.post(get_token, params=params)
-    print(token_res.json())
+    # print(token_res.json())
     access_token = token_res.json()['access_token']
     # 정보 제공 동의 항목
     scope = token_res.json()['scope']
-    print(scope)
+    # print(scope)
     scope = set(scope.split())
-    print(scope)
+    # print(scope)
 
     # 프로필 요청
     get_profile = f'https://kapi.kakao.com/v2/user/me'
@@ -76,7 +79,7 @@ def kakao_login(request):
         'access_token': access_token
     }
     accept = requests.post(f'http://j5a601.p.ssafy.io:8000/accounts/kakao/user/', data=data)
-    print(accept)
+    # print(accept)
 
     # 소셜 로그인 유저
     social_user = SocialAccount.objects.all().filter(uid=profile_res.json()['id'])

@@ -1,63 +1,67 @@
 <template>
   <div class="museum-modal">
-    <div>
-      <span class="museum-name">{{ museumInfo.fclty_name }}</span>
-      <span> [{{ museumInfo.fclty_type }}]</span>
+    <div class="museum-modal-wrap">
+      <div>
+        <span class="museum-name">{{ museumInfo.fclty_name }} </span>
+        <span> [{{ museumInfo.fclty_type }}]</span>
+      </div>
+
+      <br>
+
+      <div>{{ museumInfo.introduction }}</div>
+
+      <br>
+
+      <div>{{ museumInfo.address }}</div>
+
+      <br>
+      
+      <div>{{ museumInfo.hompage }}</div>
+
+      <br>
+
+      <div class="semi-title">운영 정보</div>
+
+      <div>
+        <div class="inblock-box">평일</div>
+        {{ museumInfo.weekday_open }} ~
+        {{ museumInfo.weekday_close }}
+      </div>
+
+      <div>
+        <div class="inblock-box">공휴일</div>
+        {{ museumInfo.holiday_open }} ~
+        {{ museumInfo.holiday_close }}
+      </div>
+
+      <div class="closed-date-wrap">
+        <div class="inblock-box">휴무</div>
+        <div class="closed-date">{{ museumInfo.closed_date }}</div>
+      </div>
+
+      <br>
+
+      <div class="semi-title">요금 정보</div>
+      <div>
+        <div class="inblock-box">성인</div>
+        {{ museumInfo.adult_chrg }} 원
+      </div>
+      <div>
+        <div class="inblock-box">청소년</div>
+        {{ museumInfo.student_chrg }} 원
+      </div>
+      <div>
+        <div class="inblock-box">유아</div>
+        {{ museumInfo.child_chrg }} 원
+      </div>
+
+      <div id="map" class="kakao-map"></div>
     </div>
-
-    <br>
-
-    <div>{{ museumInfo.introduction }}</div>
-
-    <br>
-
-    <div>{{ museumInfo.address }}</div>
-
-    <br>
-    
-    <div>{{ museumInfo.hompage }}</div>
-
-    <br>
-
-    <div class="semi-title">운영 정보</div>
-
-    <div>
-      <div class="inblock-box">평일</div>
-      {{ museumInfo.weekday_open }} ~
-      {{ museumInfo.weekday_close }}
-    </div>
-    <div>
-      <div class="inblock-box">공휴일</div>
-      {{ museumInfo.holiday_open }} ~
-      {{ museumInfo.holiday_close }}
-    </div>
-    <div>
-      <div class="inblock-box">휴무일</div>
-      {{ museumInfo.closed_date }}
-    </div>
-
-    <br>
-
-    <div class="semi-title">요금 정보</div>
-    <div>
-      <div class="inblock-box">성인</div>
-      {{ museumInfo.adult_chrg }} 원
-    </div>
-    <div>
-      <div class="inblock-box">청소년</div>
-      {{ museumInfo.student_chrg }} 원
-    </div>
-    <div>
-      <div class="inblock-box">유아</div>
-      {{ museumInfo.child_chrg }} 원
-    </div>
-
-    <div id="map" class="kakao-map"></div>
   </div>
 </template>
 
 <script>
-import {mapActions, mapState} from "vuex";
+import {mapState} from "vuex";
 
 export default {
   name: 'MuseumModal',

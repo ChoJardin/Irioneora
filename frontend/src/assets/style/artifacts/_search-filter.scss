@@ -1,13 +1,13 @@
 .theme-text {
   color: #F1E8DB;
-  font-size: 25px;
-  line-height: 25px;
+  font-size: 23px;
+  line-height: 110%;
   margin-bottom: 10px;
-  margin-left: 20px;
+  margin-left: 5.5%;
 }
 
 .search-button {
-  font-size: 12px;
+  font-size: 14px;
   border: solid 1px #848063;
   color: #848063;
 
@@ -17,11 +17,11 @@
   margin-bottom: 10px;
   line-height: 28px;
   height: 28px;
-  border-radius: 3px;
+  // border-radius: 3px;
 }
 
 .search-button.on {
-  border: solid 1px #d4ab67;;
+  border: solid 1.5px #d4ab67;;
   color: #d4ab67;
 }
 

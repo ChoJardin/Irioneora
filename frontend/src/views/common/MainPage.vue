@@ -75,12 +75,6 @@ export default {
     onLoading(status) {
       // console.log(status)
       this.isLoading = status
-      // 스피너 돌 때 스크롤 안되게 -> 추후 확인 필요하고요..
-      if (status) {
-        document.body.style.overflow = 'hidden'
-      } else {
-        document.body.style.overflow = 'null'
-      }
     },
     onError(error) {
       this.error = error
