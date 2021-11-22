@@ -30,7 +30,8 @@ export default {
             .then(res => {
               this.$store.dispatch('fulfillLogin', res.data.key)
               cookies.set('user-token', res.data.key)
-              this.$router.go(-2)
+              this.$router.push('/')
+              // this.$router.go(-2)
             })
           }
         },

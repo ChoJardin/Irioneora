@@ -101,7 +101,7 @@ import SearchCard from './SearchCard.vue'
           this.nextNum = j
         })
         .catch((err) => {
-          console.log(err)
+          // console.log(err)
         })
       },
 
