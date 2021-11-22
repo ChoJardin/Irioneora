@@ -160,16 +160,10 @@ router.beforeEach((to, from, next) => {
   }
   // 발표용 조건
   // 회원만 접근 가능하도록
-  else {
-    if (!store.getters.isLoggedIn) {
-      next('/login')
-    }
-  }
-
-  // 발표용
-  // 회원만 접근 가능하게
-  // if (to.path !== '/login' || to.path !== '/signup') {
-  //   next('/login')
+  // else {
+  //   if (!store.getters.isLoggedIn) {
+  //     next('/login')
+  //   }
   // }
 
   // 결과 페이지

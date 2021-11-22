@@ -133,6 +133,11 @@ export default {
             cookies.set('user-token', token, 0)
             this.$router.back()
         })
+        .catch(err => {
+            if (err.response.status === 400) {
+              this.error.password1 = '비밀번호가 너무 간단합니다'
+            }
+        })
       }
     },
 

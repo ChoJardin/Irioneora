@@ -66,12 +66,20 @@
   - <img src="https://img.shields.io/badge/SCSS----yellowgreen?logo=sass"  style="float: left">
   - <img src="https://img.shields.io/badge/JavaScript-ES6+-yellowgreen?logo=javascript" style="float: left">
   - <img src="https://img.shields.io/badge/Vue.js-@vue/cli 4.5.13-yellowgreen?logo=vue.js"  style="float: left">
-  - <img src="https://img.shields.io/badge/Node.js-v.14.17.3-yellowgreen?logo=node.js" style="float: left">
+  - <img src="https://img.shields.io/badge/Node.js-v.10.19.0-yellowgreen?logo=node.js" style="float: left">
   - <img src="https://img.shields.io/badge/Visual Studio Code----yellowgreen?logo=visualstudiocode" style="float: left">
 
 <br>
 
+<br>
 
+## 커밋규칙 
+
+- [커밋, 지라 컨벤션 (notion.so)](https://www.notion.so/006ed71e14e6432e88bc02a625365351)
+
+<br>
+
+<br>
 
 ## 기획의도 
 
@@ -80,8 +88,6 @@
 ​		![image-20211008050022799](README.assets/image-20211008050022799.png) 
 
 - 우리나라 문화재와 유물의 매력을 손쉽게 접할 수 있는 서비스 제공
-
-<br>
 
 #### 2. MZ세대의 흥미에 맞춘 테스트 서비스
 
@@ -277,6 +283,7 @@ frontend
     │  │      heart.png
     │  │      kakao-icon.png
     │  │      kakao-login-wide.png
+    │  │      last-mountain.png
     │  │      left-m.png
     │  │      logo-main.png
     │  │      logo-navbar.png
